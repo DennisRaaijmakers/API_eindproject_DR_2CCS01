@@ -89,7 +89,7 @@ def login_for_access_token(form_data: OAuth2PasswordRequestForm = Depends(), db:
 # http://127.0.0.1:8000/update/player/1
 @app.put("/update/player/{player_id}", response_model=schemas.Player)
 async def update_player(player: schemas.PlayerCreate, db: Session = Depends(get_db),
-                        player_id: int = Path(ge=0, le=60, default=1), token: str = Depends(auth.oauth2_scheme)):
+                        player_id: int = Path(ge=0, le=60, default=1), token: str = Depends(oauth2_scheme)):
     return crud.update_player(db=db, player=player, player_id=player_id)
 
 
@@ -97,7 +97,7 @@ async def update_player(player: schemas.PlayerCreate, db: Session = Depends(get_
 
 # http://127.0.0.1:8000/delete/player/1
 @app.delete("/delete/player/{player_id}", response_model=schemas.Player)
-async def delete_player(db: Session = Depends(get_db), player_id: int = Path(ge=0, le=60, default=1), token: str = Depends(auth.oauth2_scheme)):
+async def delete_player(db: Session = Depends(get_db), player_id: int = Path(ge=0, le=60, default=1), token: str = Depends(oauth2_scheme)):
     return crud.delete_player(db=db, player_id=player_id)
 
 
@@ -111,7 +111,7 @@ async def get_player_by_id(db: Session = Depends(get_db), player_id: int = Path(
     return crud.get_player_by_id(db, player_id)
 
 @app.get("/players/", response_model=list)
-def read_users(db: Session = Depends(get_db), token: str = Depends(auth.oauth2_scheme)):
+def read_users(db: Session = Depends(get_db), token: str = Depends(oauth2_scheme)):
     return crud.get_all_players(db)
 
 # Get request voor een map op te vragen met ID
