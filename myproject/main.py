@@ -24,6 +24,7 @@ print("Tables created.......")
 app = FastAPI()
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
 
+
 # Dependency
 def get_db():
     db = SessionLocal()
@@ -54,18 +55,17 @@ async def create_map(map_map: schemas.Map, db: Session = Depends(get_db)):
     if crud.get_map_by_name(db, map_map.map_name):
         raise HTTPException(status_code=400, detail="Map already exists")
     else:
-        crud.create_map(db, map_map)
+        return crud.create_map(db, map_map)
 
-    return map_map
 
-@app.post("/op/", response_model=schemas.Map)
+
+@app.post("/op/", response_model=schemas.Operator)
 async def create_op(op: schemas.Operator, db: Session = Depends(get_db)):
     if crud.get_operator_by_name(db, op.operator_name):
         raise HTTPException(status_code=400, detail="Operator already exists")
     else:
-        crud.create_op(db, op)
+        return crud.create_op(db, op)
 
-    return op
 
 @app.post("/token")
 def login_for_access_token(form_data: OAuth2PasswordRequestForm = Depends(), db: Session = Depends(get_db)):
@@ -84,6 +84,7 @@ def login_for_access_token(form_data: OAuth2PasswordRequestForm = Depends(), db:
     # Return the JWT as a bearer token to be placed in the headers
     return {"access_token": access_token, "token_type": "bearer"}
 
+
 # PUT REQUEST
 
 # http://127.0.0.1:8000/update/player/1
@@ -97,7 +98,8 @@ async def update_player(player: schemas.PlayerCreate, db: Session = Depends(get_
 
 # http://127.0.0.1:8000/delete/player/1
 @app.delete("/delete/player/{player_id}", response_model=schemas.Player)
-async def delete_player(db: Session = Depends(get_db), player_id: int = Path(ge=0, le=60, default=1), token: str = Depends(oauth2_scheme)):
+async def delete_player(db: Session = Depends(get_db), player_id: int = Path(ge=0, le=60, default=1),
+                        token: str = Depends(oauth2_scheme)):
     return crud.delete_player(db=db, player_id=player_id)
 
 
@@ -110,9 +112,16 @@ async def get_player_by_id(db: Session = Depends(get_db), player_id: int = Path(
         raise HTTPException(status_code=400, detail=f"No player with id {player_id}")
     return crud.get_player_by_id(db, player_id)
 
+
 @app.get("/players/", response_model=list)
 def read_users(db: Session = Depends(get_db), token: str = Depends(oauth2_scheme)):
     return crud.get_all_players(db)
+
+
+@app.get("/operators/", response_model=list)
+def all_operators(db: Session = Depends(get_db), token: str = Depends(oauth2_scheme)):
+    return crud.get_all_operators(db)
+
 
 # Get request voor een map op te vragen met ID
 # http://127.0.0.1:8000/get/map/1

@@ -28,10 +28,10 @@ class Player(Base):
 
 # {
 #     "fav_map_id": 2,
-#     "username": "test",
-#     "name": "test",
-#     "email": "test@test.com",
-#     "password": "abc123!",
+#     "username": "s",
+#     "name": "s",
+#     "email": "s@s.com",
+#     "password": "s",
 #     "region": "Europe",
 #     "mmr": 2000
 # }
