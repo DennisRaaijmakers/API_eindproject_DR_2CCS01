@@ -11,7 +11,7 @@ class Operator(Base):
     operator_name = Column(String, unique=True, index=True)
     primary_weapon = Column(String, index=True)
     secondary_weapon = Column(String, index=True)
-
+    side = Column(String, index=True)
 
 class Player(Base):
     __tablename__ = "player"

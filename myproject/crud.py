@@ -133,7 +133,8 @@ def create_op(db: Session, op: schemas.Operator):
     db_op = models.Operator(opp_id=len(get_all_operators(db)) + 1,
                             operator_name=op.operator_name,
                             primary_weapon=op.primary_weapon,
-                            secondary_weapon=op.secondary_weapon)
+                            secondary_weapon=op.secondary_weapon,
+                            side=op.side)
     db.add(db_op)
     db.commit()
     db.refresh(db_op)

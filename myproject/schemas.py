@@ -7,6 +7,7 @@ class OperatorBase(BaseModel):
     operator_name: str | None = "Invalid"
     primary_weapon: str | None = "Invalid"
     secondary_weapon: str | None = "Invalid"
+    side: str | None = "Invalid"
 
 
 class OperatorCreate(OperatorBase):
