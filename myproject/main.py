@@ -12,6 +12,8 @@ import schemas
 import auth
 from database import SessionLocal, engine
 
+from starlette.middleware.cors import CORSMiddleware
+
 print("We are in the main.......")
 if not os.path.exists('.\sqlitedb'):
     print("Making folder.......")
@@ -24,6 +26,17 @@ print("Tables created.......")
 app = FastAPI()
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
 
+# CORS
+origins = ["*"]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 
 # Dependency
 def get_db():
@@ -33,6 +46,10 @@ def get_db():
     finally:
         db.close()
 
+# list = [{"map_id": 1, "map_name": "chalet"},{"map_id": 2, "map_name": "oregon"}, {"map_id": 3, "map_name": "clubhouse"}]
+# for i in list:
+#     if not crud.get_map_by_name(db=db , i["map_name"]):
+#         print ("test") #crud.create_map_by_name(Session = Depends(get_db), i["map_name"])
 
 # POST REQUEST
 
