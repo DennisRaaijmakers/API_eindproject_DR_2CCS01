@@ -94,6 +94,24 @@ hier zie je een voorbeeld als je een hoger getal meegeeft als dat er maps in de 
 
 
 ## POST requests:
+1. **create player** <br />
+     
+    <pre>
+    {
+        "fav_map_id": 2,
+        "username": "player",
+        "name": "player",
+        "email": "player@test.com",
+        "password": "abc123!",
+        "region": "Europe",
+        "mmr": 1234
+    }
+    </pre>
+    
+2. **create map** <br />
+3. **create operator** <br />
+4. **login token** <br />
+
 
 ## DELETE request:
 
