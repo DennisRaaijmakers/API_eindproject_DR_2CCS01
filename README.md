@@ -51,9 +51,17 @@ Met authenticatie:<br />
 Op de website:<br />
 ![postman get all player image](images/all_operators_A_web.PNG)<br />
 
-4. 
+4. Get map by id
+Door het ID van de map in te geven krijg je de naam van de map te zien.
 
-5. 
+De link die ik gebruik heb hiervoor is : ```https://system-service-dennisraaijmakers.cloud.okteto.net/get/map/1```<br />
+
+Op postman
+![get map by id postman](images/get_map_by_id_postman.PNG)<br />
+Op de website:
+![get map by id postman](images/get_map_by_id_web.PNG)<br />
+
+5. Get favorite map of player
 
 6. 
 
