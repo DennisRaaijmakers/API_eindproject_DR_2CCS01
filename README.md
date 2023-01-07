@@ -24,6 +24,17 @@ Zo ziet het eruit als ik het op de website doe:
 ![website get player image](images/get_player_by_id_web.PNG)
 
 2. Get all players
+Dit word beveiligd met authenticatie als je een token ingeeft kan je pas alle players zien.
+Dit heb ik gedaan door deze link in te geven: ```https://system-service-dennisraaijmakers.cloud.okteto.net/players/```
+Zonder authenticatie:
+![postman get all player image zonder authenticatie](images/all_players_NA_postman.PNG)
+Met authenticatie:
+![postman get all player image met authenticatie](images/all_players_A_postman.PNG)
+Op de website:
+![postman get all player image](images/all_players_A_web.PNG)
+
+3. Get all operators
+
 
 ## POST requests:
 
