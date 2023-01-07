@@ -56,14 +56,24 @@ Door het ID van de map in te geven krijg je de naam van de map te zien.
 
 De link die ik gebruik heb hiervoor is : ```https://system-service-dennisraaijmakers.cloud.okteto.net/get/map/1```<br />
 
-Op postman
+Op postman: <br />
 ![get map by id postman](images/get_map_by_id_postman.PNG)<br />
-Op de website:
+Op de website: <br />
 ![get map by id postman](images/get_map_by_id_web.PNG)<br />
 
 5. Get favorite map of player
+Bij deze GET request wordt er gebruik gemaakt van query parameter. Met deze GET request vraag je een random aantal maps, het aantal kan je zelf kiezen. Als je niks ingeeft dan zal er altijd 1 map getoont worden omdat de default waarde 1 is.
 
-6. 
+Op postman: <br />
+![get map by id postman](images/get_random_map_postman.PNG)<br />
+Op de website: <br />
+![get map by id postman](images/get_random_map_web.PNG)<br />
+
+hier zie je een voorbeeld als je een hoger getal meegeeft als dat er maps in de database zijn. <br />
+![get map by id postman](images/get_random_map_web_teveel.PNG)<br />
+
+6. Get random map
+
 
 
 
