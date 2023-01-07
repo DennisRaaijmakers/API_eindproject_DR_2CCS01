@@ -170,8 +170,16 @@ Nadat deze inlog succesvol is krijg je een token terug gestuurd. Als je deze tok
 
 ![get success](images/get_with_token.PNG) <br />
 
+## PUT request:
+In de PUT request kan je een player aanpassen.<br />
+In dit voor beeld heb ik de favorite map, username en het aantal mmr aangepast:<br />
+Before: <br />
+![get success](images/put_before.PNG) <br />
+![get success](images/put_request.PNG) <br />
+After: <br />
+![get success](images/put_after.PNG) <br />
+
 ## DELETE request:
 
-## PUT request:
 
 
