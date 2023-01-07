@@ -2,6 +2,10 @@
 
 ## Beschrijving gekozen thema
 Het onderwerp dat ik gekozen heb is een spel genaamd Tom Clancy's Rainbow Six Siege. Ik heb hiermee een aantal GET requests gemaakt waardoor je alle spelers en operators kan weergeven, ook kan je door middel van een player ID alle informatie van een speler opvragen (het wachtwoord word niet getoont). Door het ID van de favorite map mee te geven komt de naam van de map te staan onder de input, je kan ook met een een map ID de naam van een map zoeken. Met mijn laatste GET request kan je een willekeurig cijfer meegeven, het cijfer dat je meegeeft is het aantal maps met hun ID die getoont worden. Als je een getal meegeeft dat groter is dan dat er maps zijn dan worden de maps onder elkaar in volgorde weergegeven. Ik heb ook 3 POST requests gemaakt, zodat je een player, operator en een map kan aanmaken. Ik heb ook gebruik gemaakt van een PUT en DELETE zodat je de player informatie kan wijzigen of verwijderen. Wachtwoorden worden gehashed en sommige requests vereisen een authenticatie.
+
+## Deployment
+Ik heb mijn API door middel van okteto cloud in de cloud gedeployed. Dit heb ik gedaan door gebruik te maken van github workflow die een image op dockerhub zet zodat de docker compose file in de cloud de image kan downloaden gedeployed kan worden.
+
 ## Uitbreiding:
 Ik heb een front end gemaakt waar alle GET en POST requests opstaan en deze gehost op Netlify (zie Links), ik heb deze ook een style gegeven.
 
@@ -193,4 +197,8 @@ Checken of de player weg is in postman: <br />
 ![check players postman](images/delete_player_check_postman.PNG) <br />
 Checken of de player weg is op de website: <br />
 ![check player web](images/delete_player_check_web.PNG) <br />
+
+
+## Slot
+Ik vond het een interessante opdracht ik heb ook aan alle basis taken gewerkt. Als uitbreiding heb ik een front end met alle GET en POST requests, ik heb de front end ook nog een beetje gestyled. Deze front end wordt gehost op netlify (zie Links).
 
