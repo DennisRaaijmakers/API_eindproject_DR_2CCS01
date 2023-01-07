@@ -11,11 +11,19 @@ Ik heb een front end gemaakt waar alle GET en POST requests opstaan en deze geho
 ### Front end op github: [Klik hier](https://github.com/DennisRaaijmakers/api_eindproject_webpagina)
 
 ## OpenAPI screenshot:
+Hier zie je een screenshot van OpenAPI docs:
 ![OpenAPI image](images/OpenAPI.png)
 
 
 ## GET requests:
+1. Get player by id
+Als je een player ID meegeeft krijg je de informatie over een player.
+Dit heb ik gedaan door deze link in te geven: ```https://system-service-dennisraaijmakers.cloud.okteto.net/get/player/1```
+![postman get player image](images/get_player_by_id_postman.PNG)
+Zo ziet het eruit als ik het op de website doe:
+![website get player image](images/get_player_by_id_web.PNG)
 
+2. Get all players
 
 ## POST requests:
 
