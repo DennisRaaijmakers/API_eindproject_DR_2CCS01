@@ -62,7 +62,26 @@ Op de website: <br />
 ![get map by id postman](images/get_map_by_id_web.PNG)<br />
  
 5. **Get favorite map of player** <br />
-Bij deze GET request wordt er gebruik gemaakt van query parameter. Met deze GET request vraag je een random aantal maps, het aantal kan je zelf kiezen. Als je niks ingeeft dan zal er altijd 1 map getoont worden omdat de default waarde 1 is.
+Deze GET request geeft de favorite map van een speler weer door het ID van de speler in te geven.<br />
+De link die ik hiervoor gebruik is: ```https://system-service-dennisraaijmakers.cloud.okteto.net/get/player/favoritemap/2``` <br />
+
+Op postman: <br />
+![get map by id postman](images/get_fav_map_postman.PNG)<br />
+Op de website: <br />
+![get map by id postman](images/get_fav_map_web.PNG)<br />
+
+**Verduidelijking** <br />
+
+In dit voorbeeld heb ik player 2 gebruikt.
+Zoals je op de foto kan zien is de favorite map ID van player 2 het nummer 3.<br />
+![get map by id postman](images/verduidelijking_get5.PNG)<br />
+
+En zoals je op deze foto kan zien is de map met het ID 3 de map Clubhouse:
+![get map by id postman](images/verduidelijking_get5_mapid.PNG)<br />
+
+6. **Get random map** <br />
+Bij deze GET request wordt er gebruik gemaakt van query parameter. Met deze GET request vraag je een random aantal maps, het aantal kan je zelf kiezen. Als je niks ingeeft dan zal er altijd 1 map getoont worden omdat de default waarde 1 is.<br />
+De link die ik hiervoor gebruik is: ```https://system-service-dennisraaijmakers.cloud.okteto.net/map/random?amount=3``` <br />
 
 Op postman: <br />
 ![get map by id postman](images/get_random_map_postman.PNG)<br />
@@ -71,9 +90,6 @@ Op de website: <br />
 
 hier zie je een voorbeeld als je een hoger getal meegeeft als dat er maps in de database zijn. <br />
 ![get map by id postman](images/get_random_map_web_teveel.PNG)<br />
-
-6. **Get random map** <br />
-
 
 
 
