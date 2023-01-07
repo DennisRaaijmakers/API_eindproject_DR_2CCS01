@@ -1,7 +1,7 @@
 # Eind project API
 
 ## Beschrijving gekozen thema
-Het onderwerp dat ik gekozen heb is een spel genaamd Tom Clancy's Rainbow Six Siege. Ik heb hiermee een aantal GET requests gemaakt waardoor je alle spelers en operators kan weergeven, ook kan je door middel van een player ID alle informatie van een speler opvragen (het wachtwoord word niet getoont). Door het ID van de favorite map mee te geven komt de naam van de map te staan onder de input, je kan ook met een een map ID de naam van een map zoeken. Met mijn laatste GET request kan je een willekeurig cijfer meegeven, het cijfer dat je meegeeft is het aantal maps met hun ID die getoont worden. Als je een getal meegeeft dat groter is dan dat er maps zijn dan worden de maps onder elkaar in volgorde weergegeven. Ik heb ook 3 POST requests gemaakt, zodat je een player, operator en een map kan aanmaken. Ik heb ook gebruik gemaakt van een PUT en DELETE zodat je de player informatie kan wijzigen of verwijderen.
+Het onderwerp dat ik gekozen heb is een spel genaamd Tom Clancy's Rainbow Six Siege. Ik heb hiermee een aantal GET requests gemaakt waardoor je alle spelers en operators kan weergeven, ook kan je door middel van een player ID alle informatie van een speler opvragen (het wachtwoord word niet getoont). Door het ID van de favorite map mee te geven komt de naam van de map te staan onder de input, je kan ook met een een map ID de naam van een map zoeken. Met mijn laatste GET request kan je een willekeurig cijfer meegeven, het cijfer dat je meegeeft is het aantal maps met hun ID die getoont worden. Als je een getal meegeeft dat groter is dan dat er maps zijn dan worden de maps onder elkaar in volgorde weergegeven. Ik heb ook 3 POST requests gemaakt, zodat je een player, operator en een map kan aanmaken. Ik heb ook gebruik gemaakt van een PUT en DELETE zodat je de player informatie kan wijzigen of verwijderen. Wachtwoorden worden gehashed en sommige requests vereisen een authenticatie.
 ## Uitbreiding:
 Ik heb een front end gemaakt waar alle GET en POST requests opstaan en deze gehost op Netlify (zie Links), ik heb deze ook een style gegeven.
 
@@ -18,22 +18,39 @@ Hier zie je een screenshot van OpenAPI docs:
 ## GET requests:
 1. Get player by id
 Als je een player ID meegeeft krijg je de informatie over een player.
-Dit heb ik gedaan door deze link in te geven: ```https://system-service-dennisraaijmakers.cloud.okteto.net/get/player/1```
+Dit heb ik gedaan door deze link in te geven: ```https://system-service-dennisraaijmakers.cloud.okteto.net/get/player/1```<br />
 ![postman get player image](images/get_player_by_id_postman.PNG)
-Zo ziet het eruit als ik het op de website doe:
+Zo ziet het eruit als ik het op de website doe:<br />
 ![website get player image](images/get_player_by_id_web.PNG)
 
 2. Get all players
 Dit word beveiligd met authenticatie als je een token ingeeft kan je pas alle players zien.
 Dit heb ik gedaan door deze link in te geven: ```https://system-service-dennisraaijmakers.cloud.okteto.net/players/```
-Zonder authenticatie:
+
+Zonder authenticatie:<br />
 ![postman get all player image zonder authenticatie](images/all_players_NA_postman.PNG)
-Met authenticatie:
+Met authenticatie:<br />
 ![postman get all player image met authenticatie](images/all_players_A_postman.PNG)
-Op de website:
+Op de website:<br />
 ![postman get all player image](images/all_players_A_web.PNG)
 
 3. Get all operators
+Het principe is hetzelfde als Get all players. Door een token mee te geven krijg je alle opertors te zien ander krijg je een "not authenticated" error.
+
+De link die ik gebruik heb hiervoor is : ```https://system-service-dennisraaijmakers.cloud.okteto.net/operators/```
+Zonder authenticatie:<br />
+![postman get all player image zonder authenticatie](images/all_operators_NA_postman.PNG)
+Met authenticatie:<br />
+![postman get all player image met authenticatie](images/all_operators_A_postman.PNG)
+Op de website:<br />
+![postman get all player image](images/all_operators_A_web.PNG)
+
+4. 
+
+5. 
+
+6. 
+
 
 
 ## POST requests:
