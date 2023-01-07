@@ -22,14 +22,14 @@ Hier zie je een screenshot van OpenAPI docs:
 
 
 ## GET requests:
-1. Get player by id
+1. **Get player by id** <br />
 Als je een player ID meegeeft krijg je de informatie over een player.
 Dit heb ik gedaan door deze link in te geven: ```https://system-service-dennisraaijmakers.cloud.okteto.net/get/player/1```<br />
 ![postman get player image](images/get_player_by_id_postman.PNG)
 Zo ziet het eruit als ik het op de website doe:<br />
 ![website get player image](images/get_player_by_id_web.PNG)
 
-2. Get all players
+2. **Get all players** <br />
 Dit word beveiligd met authenticatie als je een token ingeeft kan je pas alle players zien.
 Dit heb ik gedaan door deze link in te geven: ```https://system-service-dennisraaijmakers.cloud.okteto.net/players/```
 
@@ -40,7 +40,7 @@ Met authenticatie:<br />
 Op de website:<br />
 ![postman get all player image](images/all_players_A_web.PNG)
 
-3. Get all operators
+3. **Get all operators** <br />
 Het principe is hetzelfde als Get all players. Door een token mee te geven krijg je alle opertors te zien ander krijg je een "not authenticated" error.
 
 De link die ik gebruik heb hiervoor is : ```https://system-service-dennisraaijmakers.cloud.okteto.net/operators/```<br />
@@ -51,7 +51,7 @@ Met authenticatie:<br />
 Op de website:<br />
 ![postman get all player image](images/all_operators_A_web.PNG)<br />
 
-4. Get map by id
+4. **Get map by id** <br />
 Door het ID van de map in te geven krijg je de naam van de map te zien.
 
 De link die ik gebruik heb hiervoor is : ```https://system-service-dennisraaijmakers.cloud.okteto.net/get/map/1```<br />
@@ -60,8 +60,8 @@ Op postman: <br />
 ![get map by id postman](images/get_map_by_id_postman.PNG)<br />
 Op de website: <br />
 ![get map by id postman](images/get_map_by_id_web.PNG)<br />
-
-5. Get favorite map of player
+ 
+5. **Get favorite map of player** <br />
 Bij deze GET request wordt er gebruik gemaakt van query parameter. Met deze GET request vraag je een random aantal maps, het aantal kan je zelf kiezen. Als je niks ingeeft dan zal er altijd 1 map getoont worden omdat de default waarde 1 is.
 
 Op postman: <br />
@@ -72,7 +72,7 @@ Op de website: <br />
 hier zie je een voorbeeld als je een hoger getal meegeeft als dat er maps in de database zijn. <br />
 ![get map by id postman](images/get_random_map_web_teveel.PNG)<br />
 
-6. Get random map
+6. **Get random map** <br />
 
 
 
