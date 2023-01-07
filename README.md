@@ -139,6 +139,16 @@ Op de website: <br />
 3. **Create operator** <br />
 Met deze POST request kan een een operator aanmaken. Er is hier ook een eis en dat is dat de naam van de operator niet al mag bestaan in de database. <br />
 
+Voorbeeld JSON voor als body in postman: <br />
+<pre>
+{
+    "operator_name":"Twitch",
+    "primary_weapon":"F2",
+    "secondary_weapon":"P9",
+    "side": "attack"
+}
+</pre>
+
 Op postman: <br />
 ![post op postman](images/post_op_postman.PNG) <br />
 
@@ -150,7 +160,15 @@ Als ik vervolgens nog eens op send klik met dezelfde gegevens krijg ik een error
 ![error op create](images/post_op_postman_bestaat.PNG) <br />
 
 4. **Login token** <br />
+Met deze POST request kan je een token aanvragen zodat je bepaalde dingen wel kan zien, als je die token meegeeft dan ben je geauthenticeerd. De token krijg je enkel als je een player hebt gemaakt en dan met het email en password inlogt van die speler.
 
+![inlog /token](images/post_token.PNG) <br />
+
+Nadat deze inlog succesvol is krijg je een token terug gestuurd. Als je deze token in geeft dan werken de requests waar je eerst niet geauthenticeerd voor was nu wel.<br />
+
+![token](images/post_token_key.PNG) <br />
+
+![get success](images/get_with_token.PNG) <br />
 
 ## DELETE request:
 
