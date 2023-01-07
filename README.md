@@ -66,30 +66,30 @@ Deze GET request geeft de favorite map van een speler weer door het ID van de sp
 De link die ik hiervoor gebruik is: ```https://system-service-dennisraaijmakers.cloud.okteto.net/get/player/favoritemap/2``` <br />
 
 Op postman: <br />
-![get map by id postman](images/get_fav_map_postman.PNG)<br />
+![get fav map postman](images/get_fav_map_postman.PNG)<br />
 Op de website: <br />
-![get map by id postman](images/get_fav_map_web.PNG)<br />
+![get fav map web](images/get_fav_map_web.PNG)<br />
 
 **Verduidelijking** <br />
 
 In dit voorbeeld heb ik player 2 gebruikt.
 Zoals je op de foto kan zien is de favorite map ID van player 2 het nummer 3.<br />
-![get map by id postman](images/verduidelijking_get5.PNG)<br />
+![verduidelijking 1](images/verduidelijking_get5.PNG)<br />
 
 En zoals je op deze foto kan zien is de map met het ID 3 de map Clubhouse:
-![get map by id postman](images/verduidelijking_get5_mapid.PNG)<br />
+![verduidelijking 2](images/verduidelijking_get5_mapid.PNG)<br />
 
 6. **Get random map** <br />
 Bij deze GET request wordt er gebruik gemaakt van query parameter. Met deze GET request vraag je een random aantal maps, het aantal kan je zelf kiezen. Als je niks ingeeft dan zal er altijd 1 map getoont worden omdat de default waarde 1 is.<br />
 De link die ik hiervoor gebruik is: ```https://system-service-dennisraaijmakers.cloud.okteto.net/map/random?amount=3``` <br />
 
 Op postman: <br />
-![get map by id postman](images/get_random_map_postman.PNG)<br />
+![get random postman](images/get_random_map_postman.PNG)<br />
 Op de website: <br />
-![get map by id postman](images/get_random_map_web.PNG)<br />
+![get random web](images/get_random_map_web.PNG)<br />
 
 hier zie je een voorbeeld als je een hoger getal meegeeft als dat er maps in de database zijn. <br />
-![get map by id postman](images/get_random_map_web_teveel.PNG)<br />
+![get random te veel](images/get_random_map_web_teveel.PNG)<br />
 
 
 
@@ -97,7 +97,7 @@ hier zie je een voorbeeld als je een hoger getal meegeeft als dat er maps in de 
 1. **Create player** <br />
 Met deze POST request kan je een player aanmaken. Er zijn wel een paar eissen zoals: het mag niet dezelfde username hebben als iemand anders en ook niet het zelfde email adres. Na het maken worden de waardes terug gegeven behalve het wachtwoord.<br />
 
-Voorbeeld code van een body in postman: <br />
+Voorbeeld JSON voor als body in postman: <br />
 
 <pre>
 {
@@ -110,16 +110,45 @@ Voorbeeld code van een body in postman: <br />
     "mmr": 1234
 }
 </pre>
-(Het player ID wordt automatisch genummerd)
+(Het player ID wordt automatisch genummerd) <br />
 
 Op postman: <br />
-![get map by id postman](images/post_player_postman.PNG)<br />
+![post player postman](images/post_player_postman.PNG)<br />
 
 Op de website: <br />
-![get map by id postman](images/post_player_web.PNG)<br />
+(in de inputs moet je de gegevens invullen die gevraagd worden) <br />
+![post player web](images/post_player_web.PNG)<br />
     
 2. **Create map** <br />
+Bij deze POST request kan je een map aanmaken. Hier is ook een eis, de map die je aanmaakt mag nog niet bestaan. <br />
+Voorbeeld JSON voor als body in postman: <br />
+<pre>
+{
+    "map_name": "border"
+}
+</pre>
+
+Op postman: <br />
+![post map postman](images/post_map_postman.PNG) <br />
+
+Op de website: <br />
+(in de inputs moet je de gegevens invullen die gevraagd worden) <br />
+![post map web](images/post_map_web.PNG) <br />
+
+
 3. **Create operator** <br />
+Met deze POST request kan een een operator aanmaken. Er is hier ook een eis en dat is dat de naam van de operator niet al mag bestaan in de database. <br />
+
+Op postman: <br />
+![post op postman](images/post_op_postman.PNG) <br />
+
+Op de website: <br />
+(in de inputs moet je de gegevens invullen die gevraagd worden) <br />
+![post op web](images/post_op_web.PNG) <br />
+
+Als ik vervolgens nog eens op send klik met dezelfde gegevens krijg ik een error: <br />
+![error op create](images/post_op_postman_bestaat.PNG) <br />
+
 4. **Login token** <br />
 
 
