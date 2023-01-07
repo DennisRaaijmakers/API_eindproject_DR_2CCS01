@@ -175,11 +175,22 @@ In de PUT request kan je een player aanpassen.<br />
 In dit voor beeld heb ik de favorite map, username en het aantal mmr aangepast:<br />
 Before: <br />
 ![get success](images/put_before.PNG) <br />
+Put request: <br />
 ![get success](images/put_request.PNG) <br />
 After: <br />
 ![get success](images/put_after.PNG) <br />
 
+De gebruikte link: <br />
+```https://system-service-dennisraaijmakers.cloud.okteto.net/update/player/1``` <br />
+
 ## DELETE request:
-
-
+Met deze DELETE request kan je een player deleten door in de link het player ID van de speler die je wilt deleten weg te doen.<br />
+Gebruikte link: <br />
+```https://system-service-dennisraaijmakers.cloud.okteto.net/delete/player/1``` <br />
+Hier zie je dat ik player 1 gedelete heb: <br />
+![delete player](images/delete_player.PNG) <br />
+Checken of de player weg is in postman: <br />
+![check players postman](images/delete_player_check_postman.PNG) <br />
+Checken of de player weg is op de website: <br />
+![check player web](images/delete_player_check_web.PNG) <br />
 
