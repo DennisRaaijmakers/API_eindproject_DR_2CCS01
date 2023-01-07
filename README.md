@@ -37,13 +37,13 @@ Op de website:<br />
 3. Get all operators
 Het principe is hetzelfde als Get all players. Door een token mee te geven krijg je alle opertors te zien ander krijg je een "not authenticated" error.
 
-De link die ik gebruik heb hiervoor is : ```https://system-service-dennisraaijmakers.cloud.okteto.net/operators/```
+De link die ik gebruik heb hiervoor is : ```https://system-service-dennisraaijmakers.cloud.okteto.net/operators/```<br />
 Zonder authenticatie:<br />
-![postman get all player image zonder authenticatie](images/all_operators_NA_postman.PNG)
+![postman get all player image zonder authenticatie](images/all_operators_NA_postman.PNG)<br />
 Met authenticatie:<br />
-![postman get all player image met authenticatie](images/all_operators_A_postman.PNG)
+![postman get all player image met authenticatie](images/all_operators_A_postman.PNG)<br />
 Op de website:<br />
-![postman get all player image](images/all_operators_A_web.PNG)
+![postman get all player image](images/all_operators_A_web.PNG)<br />
 
 4. 
 
