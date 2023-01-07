@@ -94,23 +94,33 @@ hier zie je een voorbeeld als je een hoger getal meegeeft als dat er maps in de 
 
 
 ## POST requests:
-1. **create player** <br />
-     
-    <pre>
-    {
-        "fav_map_id": 2,
-        "username": "player",
-        "name": "player",
-        "email": "player@test.com",
-        "password": "abc123!",
-        "region": "Europe",
-        "mmr": 1234
-    }
-    </pre>
+1. **Create player** <br />
+Met deze POST request kan je een player aanmaken. Er zijn wel een paar eissen zoals: het mag niet dezelfde username hebben als iemand anders en ook niet het zelfde email adres. Na het maken worden de waardes terug gegeven behalve het wachtwoord.<br />
+
+Voorbeeld code van een body in postman: <br />
+
+<pre>
+{
+    "fav_map_id": 2,
+    "username": "player",
+    "name": "player",
+    "email": "player@test.com",
+    "password": "abc123!",
+    "region": "Europe",
+    "mmr": 1234
+}
+</pre>
+(Het player ID wordt automatisch genummerd)
+
+Op postman: <br />
+![get map by id postman](images/post_player_postman.PNG)<br />
+
+Op de website: <br />
+![get map by id postman](images/post_player_web.PNG)<br />
     
-2. **create map** <br />
-3. **create operator** <br />
-4. **login token** <br />
+2. **Create map** <br />
+3. **Create operator** <br />
+4. **Login token** <br />
 
 
 ## DELETE request:
