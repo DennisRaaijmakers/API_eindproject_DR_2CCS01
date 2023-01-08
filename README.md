@@ -1,13 +1,13 @@
 # Eind project API
 
 ## Beschrijving gekozen thema
-Het onderwerp dat ik gekozen heb is een spel genaamd Tom Clancy's Rainbow Six Siege. Ik heb hiermee een aantal GET requests gemaakt waardoor je alle spelers en operators kan weergeven, ook kan je door middel van een player ID alle informatie van een speler opvragen (het wachtwoord word niet getoont). Door het ID van de favorite map mee te geven komt de naam van de map te staan onder de input, je kan ook met een een map ID de naam van een map zoeken. Met mijn laatste GET request kan je een willekeurig cijfer meegeven, het cijfer dat je meegeeft is het aantal maps met hun ID die getoont worden. Als je een getal meegeeft dat groter is dan dat er maps zijn dan worden de maps onder elkaar in volgorde weergegeven. Ik heb ook 3 POST requests gemaakt, zodat je een player, operator en een map kan aanmaken. Ik heb ook gebruik gemaakt van een PUT en DELETE zodat je de player informatie kan wijzigen of verwijderen. Wachtwoorden worden gehashed en sommige requests vereisen een authenticatie.
+Het onderwerp dat ik gekozen heb is een spel genaamd Tom Clancy's Rainbow Six Siege. Ik heb hiermee een aantal GET requests gemaakt waardoor je alle spelers en operators kumt weergeven. Ook kan je door middel van een player ID alle informatie van een speler opvragen (het wachtwoord wordt niet getoond). Door het ID van je favoriete map mee te geven komt de naam van de map te staan onder de input. Je kan ook met een een map ID de naam van een map zoeken. Met mijn laatste GET request kan je een willekeurig cijfer meegeven. Het cijfer dat je meegeeft is het aantal maps met hun ID die getoont worden. Als je een getal meegeeft dat groter is dan het aantal maps die er zijn dan worden de maps onder elkaar in volgorde weergegeven. Ik heb ook 3 POST requests gemaakt zodat je een player, operator en een map kan aanmaken. Ik heb ook gebruik gemaakt van een PUT en DELETE zodat je de player informatie kan wijzigen of verwijderen. De wachtwoorden worden gehashed en sommige requests vereisen een authenticatie.
 
 ## Deployment
-Ik heb mijn API door middel van okteto cloud in de cloud gedeployed. Dit heb ik gedaan door gebruik te maken van github workflow die een image op dockerhub zet zodat de docker compose file in de cloud de image kan downloaden gedeployed kan worden.
+Ik heb mijn API door middel van Okteto Cloud in de cloud gedeployed. Dit heb ik gedaan door gebruik te maken van GitHub Workflow die een image op Dockerhub zet, zodat de docker compose file in de cloud de image kan downloaden en gedeployed kan laten worden.
 
 ## Uitbreiding:
-Ik heb een front end gemaakt waar alle GET en POST requests opstaan en deze gehost op Netlify (zie Links), ik heb deze ook een style gegeven.
+Ik heb een front end gemaakt waar alle GET en POST requests opstaan en deze gehost op Netlify (zie Links). Ik heb deze ook een style gegeven.
 
 <br />
 
@@ -45,7 +45,7 @@ Op de website:<br />
 ![postman get all player image](images/all_players_A_web.PNG)
 
 3. **Get all operators** <br />
-Het principe is hetzelfde als Get all players. Door een token mee te geven krijg je alle opertors te zien ander krijg je een "not authenticated" error.
+Het principe is hetzelfde als "Get all players". Door een token mee te geven krijg je alle opertors te zien ander krijg je een "not authenticated" error.
 
 De link die ik gebruik heb hiervoor is : ```https://system-service-dennisraaijmakers.cloud.okteto.net/operators/```<br />
 Zonder authenticatie:<br />
@@ -77,14 +77,14 @@ Op de website: <br />
 **Verduidelijking** <br />
 
 In dit voorbeeld heb ik player 2 gebruikt.
-Zoals je op de foto kan zien is de favorite map ID van player 2 het nummer 3.<br />
+Zoals je op de foto kan zien is de favoriete map ID van player 2 het nummer 3.<br />
 ![verduidelijking 1](images/verduidelijking_get5.PNG)<br />
 
 En zoals je op deze foto kan zien is de map met het ID 3 de map Clubhouse:
 ![verduidelijking 2](images/verduidelijking_get5_mapid.PNG)<br />
 
 6. **Get random map** <br />
-Bij deze GET request wordt er gebruik gemaakt van query parameter. Met deze GET request vraag je een random aantal maps, het aantal kan je zelf kiezen. Als je niks ingeeft dan zal er altijd 1 map getoont worden omdat de default waarde 1 is.<br />
+Bij deze GET request wordt er gebruik gemaakt van de query parameter. Met deze GET request vraag je een random aantal maps waarvan je het aantal zelf kan kiezen. Als je niks ingeeft dan zal er altijd 1 map getoond worden omdat de default waarde 1 is.<br />
 De link die ik hiervoor gebruik is: ```https://system-service-dennisraaijmakers.cloud.okteto.net/map/random?amount=3``` <br />
 
 Op postman: <br />
@@ -92,14 +92,14 @@ Op postman: <br />
 Op de website: <br />
 ![get random web](images/get_random_map_web.PNG)<br />
 
-hier zie je een voorbeeld als je een hoger getal meegeeft als dat er maps in de database zijn. <br />
+hier zie je een voorbeeld als je een hoger getal meegeeft dan dat er maps in de database zijn. <br />
 ![get random te veel](images/get_random_map_web_teveel.PNG)<br />
 
 
 
 ## POST requests:
 1. **Create player** <br />
-Met deze POST request kan je een player aanmaken. Er zijn wel een paar eissen zoals: het mag niet dezelfde username hebben als iemand anders en ook niet het zelfde email adres. Na het maken worden de waardes terug gegeven behalve het wachtwoord.<br />
+Met deze POST request kan je een player aanmaken. Er zijn wel een paar eisen: je mag niet dezelfde username hebben als iemand anders en ook niet het zelfde e-mailadres. Na het maken worden de waardes terug gegeven behalve het wachtwoord.<br />
 
 Voorbeeld JSON voor als body in postman: <br />
 
@@ -141,7 +141,7 @@ Op de website: <br />
 
 
 3. **Create operator** <br />
-Met deze POST request kan een een operator aanmaken. Er is hier ook een eis en dat is dat de naam van de operator niet al mag bestaan in de database. <br />
+Met deze POST request kan je een operator aanmaken. Er is hier ook een eis en dat is dat de naam van de operator niet al mag bestaan in de database. <br />
 
 Voorbeeld JSON voor als body in postman: <br />
 <pre>
@@ -160,15 +160,15 @@ Op de website: <br />
 (in de inputs moet je de gegevens invullen die gevraagd worden) <br />
 ![post op web](images/post_op_web.PNG) <br />
 
-Als ik vervolgens nog eens op send klik met dezelfde gegevens krijg ik een error: <br />
+Als ik vervolgens nog eens op "send" klik met dezelfde gegevens dan krijg ik een error: <br />
 ![error op create](images/post_op_postman_bestaat.PNG) <br />
 
 4. **Login token** <br />
-Met deze POST request kan je een token aanvragen zodat je bepaalde dingen wel kan zien, als je die token meegeeft dan ben je geauthenticeerd. De token krijg je enkel als je een player hebt gemaakt en dan met het email en password inlogt van die speler.
+Met deze POST request kan je een token aanvragen zodat je bepaalde dingen wel kan zien. Indien je die token meegeeft dan ben je geauthenticeerd. De token krijg je enkel als je een player hebt gemaakt en dan met het e-mailadres en password inlogt van die speler.
 
 ![inlog /token](images/post_token.PNG) <br />
 
-Nadat deze inlog succesvol is krijg je een token terug gestuurd. Als je deze token in geeft dan werken de requests waar je eerst niet geauthenticeerd voor was nu wel.<br />
+Nadat deze inlog succesvol is krijg je een token teruggestuurd. Als je deze token ingeeft dan werken de requests waar je eerst niet geauthenticeerd voor was nu wel.<br />
 
 ![token](images/post_token_key.PNG) <br />
 
@@ -176,7 +176,7 @@ Nadat deze inlog succesvol is krijg je een token terug gestuurd. Als je deze tok
 
 ## PUT request:
 In de PUT request kan je een player aanpassen.<br />
-In dit voor beeld heb ik de favorite map, username en het aantal mmr aangepast:<br />
+In dit voor beeld heb ik de favoriete map, username en het aantal mmr aangepast:<br />
 Before: <br />
 ![get success](images/put_before.PNG) <br />
 Put request: <br />
@@ -200,5 +200,5 @@ Checken of de player weg is op de website: <br />
 
 
 ## Slot
-Ik vond het een interessante opdracht ik heb ook aan alle basis taken gewerkt. Als uitbreiding heb ik een front end met alle GET en POST requests, ik heb de front end ook nog een beetje gestyled. Deze front end wordt gehost op netlify (zie Links).
+Ik vond het een heel interessante opdracht om te maken. Ik heb ook aan alle basis taken gewerkt en als uitbreiding heb ik een front end met alle GET en POST request gemaakt.Ik heb de front end ook nog een beetje gestyled. Deze front end wordt gehost op Netlify (zie Links).
 
